@@ -1,11 +1,9 @@
 const express = require('express');
 const server = express();
 const path = require('path');
-server.use(express.static(path.join(__dirname, 'css')));
+server.use(express.static(path.join(__dirname, 'public')));
 server.use(express.static(path.join(__dirname, 'views')));
-server.use(express.static(path.join(__dirname, 'js')));
-server.use(express.static(path.join(__dirname, 'font')));
-server.use(express.static(path.join(__dirname, 'img')));
+
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 server.get('/', (req, res) => {
